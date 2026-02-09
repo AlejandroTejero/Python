@@ -1,0 +1,9 @@
+lista_lineas
+    client_socket,client_address
+    if client_socket
+        print
+        hola
+        fon epkfjsnddkcjsdfvdkjvnsndcad
+        asdjcvksfva
+      adsnjcvdfa
+  aenkjsdjfcpanmic

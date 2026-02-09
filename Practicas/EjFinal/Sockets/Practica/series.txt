@@ -1,0 +1,6 @@
+Lupin,3,7,hola
+Beckham,1,4
+La caida de la Casa,1,1
+Usher,1,8
+El cuerpo en llamas,1,8
+Sex Education,4,8

@@ -1,0 +1,11 @@
+lista_lineas = []
+    client_socket,client_address = server_socket.accept()
+    if client_socket:
+        print(f"Conectado a cliente = {client_address}")
+        nombre_fichero = client_socket.recv(1024).decode('utf-8')
+        print(f"Nombre del fichero pedido = {nombre_fichero}")
+        file_exists = False
+        try:
+            with open(nombre_fichero) as fichero:
+                file_exists = True
+                lines =
