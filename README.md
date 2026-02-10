@@ -2,8 +2,6 @@
 
 Repositorio de **prácticas en Python** organizadas por ejercicios, hojas y temas. La idea no es tener “un proyecto final”, sino un **historial de aprendizaje**: desde fundamentos del lenguaje hasta estructuras de datos, sockets y concurrencia.
 
-> Nota: los nombres de archivos (ej1.py, HojaX.py, IntentoX.py, etc.) reflejan ejercicios de clase/repaso y distintos intentos de solución.
-
 ---
 
 ## Estructura del repo
