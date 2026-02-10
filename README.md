@@ -1,99 +1,105 @@
-# Python — Tactical Battle + Prácticas
+# Python (apuntes + prácticas)
 
-Este repositorio contiene un conjunto de recursos enfocados al desarrollo con Python, divididos en ejercicios de fundamentos avanzados y un proyecto principal de arquitectura cliente/servidor.
+Repositorio de **prácticas en Python** organizadas por ejercicios, hojas y temas. La idea no es tener “un proyecto final”, sino un **historial de aprendizaje**: desde fundamentos del lenguaje hasta estructuras de datos, sockets y concurrencia.
 
-* **Prácticas**: Implementaciones de estructuras de datos, sockets y concurrencia.
-* **Tactical Battle**: Proyecto principal; un juego táctico por turnos estilo "tocado y hundido" desde terminal con arquitectura cliente/servidor.
-
-> No requiere entorno virtual ni dependencias externas. Ejecución compatible con **Python 3**.
+> Nota: los nombres de archivos (ej1.py, HojaX.py, IntentoX.py, etc.) reflejan ejercicios de clase/repaso y distintos intentos de solución.
 
 ---
 
-## Tabla de contenidos
-- [Prácticas](#prácticas)
-- [Tactical Battle](#tactical-battle)
-- [Qué es](#qué-es)
-- [Características](#características)
-- [Cómo ejecutar](#cómo-ejecutar)
-- [Cómo se juega](#cómo-se-juega)
-- [Unidades y habilidades](#unidades-y-habilidades)
-- [Condición de victoria](#condición-de-victoria)
-- [Ranking](#ranking)
+## Estructura del repo
+
+A nivel general encontrarás:
+
+- `Practicas/`
+  - `EjerciciosClase/`: ejercicios cortos de clase y repaso.
+  - `EjPorTemas/`: ejercicios agrupados por tema (T1, T2, T3…).
+  - `EjFinal/`: prácticas más completas de estructuras de datos, sockets y concurrencia.
 
 ---
 
-## Prácticas
-La carpeta `Practicas/` contiene ejercicios y material de aprendizaje que aportan experiencia en:
+## Contenido por carpetas
 
-* **Estructuras de datos**: Pilas, colas, listas enlazadas (simples y dobles) y árboles binarios de búsqueda.
-* **Programación orientada a objetos**: Clases, herencia y separación por módulos.
-* **Sockets**: Clientes/servidores TCP y comunicación entre procesos.
-* **Concurrencia**: Uso de `threading`, coordinación y sincronización básica.
+### `Practicas/EjerciciosClase/`
+Ejercicios “unitarios” para practicar conceptos del lenguaje y resolver problemas típicos:
+
+- Variables, tipos y operadores.
+- Condicionales y bucles.
+- Funciones (parámetros, retorno, reutilización).
+- Listas / diccionarios y recorrido de colecciones.
+- Ejercicios tipo examen/repaso (`EjExamen.py`, `Repaso.py`, `Hoja1.py`…).
+- Ejemplos de **algoritmos sencillos** y simulación (p. ej. aproximaciones tipo *Monte Carlo*).
+- Scripts con lógica práctica (p. ej. inventarios, filtros, cálculos, etc.).
+
+### `Practicas/EjPorTemas/`
+Carpeta pensada para estudiar por bloques:
+
+- `T1/`: fundamentos y ejercicios de base (control de flujo, colecciones, funciones).
+- `T2/`: **POO** (programación orientada a objetos): clases, atributos/métodos, encapsulación, y organización.
+- `T3/`: **cliente/servidor** básico (introducción a sockets).
+
+### `Practicas/EjFinal/`
+Bloque más “de sistemas” y estructuras de datos (más cercano a prácticas completas):
+
+#### Estructuras de datos
+- `Pilas/` (stacks) y `Colas/` (queues) implementadas de varias formas:
+  - Con listas de Python (enfoque rápido).
+  - Con nodos/listas enlazadas (enfoque estructurado).
+- `Listas/`:
+  - Lista enlazada simple y doblemente enlazada.
+- `Arboles/`:
+  - Árbol binario y **árbol binario de búsqueda** (BST).
+  - Apoyo con estructuras auxiliares (p. ej. `Stack.py`).
+
+#### Colecciones
+- `Colecciones/` contiene subcarpetas de apoyo/repaso sobre pilas y colas.
+
+#### Sockets
+- `Sockets/`, `Sockets_teoria/`, `Sockets_repaso/` y `Sockets_practica/`:
+  - Ejemplos de **TCP cliente/servidor**.
+  - Comunicación entre procesos y envío/recepción de datos.
+  - Serialización en algunos ejercicios (p. ej. con `pickle`) para enviar estructuras.
+
+#### Concurrencia
+- `Concurrencia/` (Teoría / Práctica / Intentos):
+  - Introducción a **hilos** (`threading`), temporización (`time`) y ejecución concurrente.
+  - Ejercicios típicos de lanzar tareas, coordinar ejecuciones y entender el flujo.
 
 ---
 
-## Tactical Battle
+## Contenidos
 
-### Qué es
-Tactical Battle es un simulador de combate táctico por turnos que utiliza un modelo **cliente/servidor**:
-* El **servidor** gestiona las conexiones, el emparejamiento de jugadores (lobby) y las partidas simultáneas.
-* El **cliente** ofrece la interfaz de usuario por terminal para posicionar unidades y ejecutar acciones.
+**Fundamentos de Python**
+- Sintaxis, tipos, operadores, control de flujo.
+- Funciones y modularización.
+- Manejo de colecciones (listas, diccionarios, tuplas).
 
-La partida ocurre en un tablero de **4x4** (coordenadas A1 a D4) donde cada jugador despliega un escuadrón con roles especializados.
+**POO**
+- Definición de clases, métodos, constructores.
+- Diseño básico orientado a objetos para modelar problemas.
+
+**Estructuras de datos**
+- Implementación y uso de pilas, colas, listas enlazadas y árboles (incluyendo BST).
+- Operaciones típicas: inserción, borrado, recorrido, búsqueda, etc.
+
+**Red y sistemas**
+- Programación con sockets (cliente/servidor TCP).
+- Envío de datos entre procesos (y serialización cuando aplica).
+
+**Concurrencia**
+- Uso de hilos con `threading`.
+- Ejecución concurrente y nociones de sincronización/tiempos.
 
 ---
 
-### Características
-* Soporte para **N partidas simultáneas** (configurable por parámetro).
-* **Lobby automático** para emparejamiento de jugadores.
-* Unidades con sistema de movimiento y habilidades con enfriamiento (cooldown).
-* **Persistencia de datos** en archivo de texto para el ranking.
-* Protocolo de red propio con **framing** por tamaño para garantizar la integridad de los mensajes.
+## Cómo ejecutar los ejercicios
 
----
+No hay un “main” único: cada archivo suele ser ejecutable por separado.
 
-### Cómo ejecutar
-
-#### 1. Servidor
-Desde la carpeta `TacticalBattle/`:
 ```bash
-python3 servidor.py <PUERTO> <PARTIDAS_SIMULTANEAS> <FICHERO_RANKING>
-python3 servidor.py 5000 1 ranking_simple.txt
-
-
-python3 cliente.py <IP_SERVIDOR> <PUERTO>
-python3 cliente.py 127.0.0.1 5000
-
-python3 cliente.py <IP_SERVIDOR> <PUERTO>
-python3 cliente.py 127.0.0.1 5001
+python3 ruta/al/archivo.py
 ```
 
----
-
-## Cómo se juega
-1. **Identificación**: cada cliente introduce su nombre de usuario.
-2. **Emparejamiento**: el servidor empareja a dos jugadores y decide quién empieza.
-3. **Despliegue**: cada jugador coloca sus unidades en el tablero.
-4. **Turnos**: en tu turno puedes:
-   - mover una unidad a una casilla contigua, o
-   - usar una habilidad.
-
-> **Nota:** el movimiento es local, pero las habilidades ofensivas/de visión se envían al oponente para procesarse en su tablero.
-
----
-
-## Unidades y habilidades
-- **Francotirador**: disparo a una celda (daño alto).
-- **Artillero**: disparo en área **2x2** (daño en zona).
-- **Inteligencia**: revela unidades enemigas en un área **2x2**.
-- **Médico**: cura a un aliado herido.
-
----
-
-## Condición de victoria
-La partida termina cuando el rival se queda sin unidades militares con vida (**Artillero** y **Francotirador**).
-
----
-
-## Ranking
-Al finalizar, los clientes envían sus estadísticas al servidor. Este calcula la puntuación y actualiza el fichero.
+```bash 
+python3 Practicas/EjFinal/Sockets/servidor.py
+python3 Practicas/EjFinal/Sockets/servidor.py
+```
